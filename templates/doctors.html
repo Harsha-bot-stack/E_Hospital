@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Module</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/patients">Patients</a></li>
+            <li><a href="/doctors">Doctors</a></li>
+            <li><a href="/admin/reports">Reports</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Doctor Module</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Doctor Name" required>
+            <input type="text" name="specialization" placeholder="Specialization" required>
+            <input type="text" name="schedule" placeholder="Schedule (e.g., Mon-Fri 9AM-5PM)" required>
+            <button type="submit">Add Doctor</button>
+        </form>
+        <h2>Doctor List</h2>
+        <ul>
+            {% for doctor in doctors %}
+            <li><strong>{{ doctor.name }}</strong> - {{ doctor.specialization }} ({{ doctor.schedule }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

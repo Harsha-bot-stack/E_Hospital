@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/patients">Patients</a></li>
+            <li><a href="/doctors">Doctors</a></li>
+            <li><a href="/admin/reports">Reports</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Reports</h1>
+        <h2>Patient Feedback</h2>
+        <ul>
+            {% for name, feedback in feedback %}
+            <li><strong>{{ name }}:</strong> {{ feedback }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Module</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/patients">Patients</a></li>
+            <li><a href="/doctors">Doctors</a></li>
+            <li><a href="/admin/reports">Reports</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Patient Module</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="date" name="appointment_date" required>
+            <button type="submit">Add Patient</button>
+        </form>
+        <h2>Patient List</h2>
+        <ul>
+            {% for patient in patients %}
+            <li><strong>{{ patient.name }}</strong> - {{ patient.email }} ({{ patient.appointment_date }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
